@@ -1,0 +1,317 @@
+/* shared.css — site-wide styles for Jessica Medler · Wild Prairie Coaching (Sage Studio default) */
+
+:root {
+  --cream: #EFF1E8;
+  --cream-2: #E2E7D6;
+  --cream-3: #D2DAC0;
+  --walnut: #2E3A29;
+  --walnut-soft: #46554A;
+  --terracotta: #6B8E5A;
+  --terracotta-deep: #547047;
+  --sage: #8FA67D;
+  --sage-soft: #B0C09D;
+  --ink: #1F2818;
+  --rule: rgba(46, 58, 41, 0.18);
+  --rule-strong: rgba(46, 58, 41, 0.32);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; }
+body {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+.display, .grotesk {
+  font-family: "Space Grotesk", -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+.mono { font-family: "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.02em; }
+.serif-italic { font-family: "Source Serif 4", Georgia, serif; font-style: italic; font-weight: 300; }
+
+.smallcaps {
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1.display, h2.display, h3.display { font-weight: 500; line-height: 0.95; }
+h1.display { letter-spacing: -0.035em; }
+
+.stripe-placeholder {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--cream-3) 0px,
+    var(--cream-3) 14px,
+    var(--cream-2) 14px,
+    var(--cream-2) 28px
+  );
+  position: relative;
+}
+.stripe-placeholder::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--walnut);
+  opacity: 0.7;
+  text-align: center;
+  padding: 12px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(46,58,41,0.04), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(107,142,90,0.05), transparent 50%);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 26px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(.2,.7,.2,1);
+  white-space: nowrap;
+}
+.btn-primary { background: var(--walnut); color: var(--cream); }
+.btn-primary:hover { background: var(--terracotta-deep); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--walnut);
+  border-color: var(--rule-strong);
+}
+.btn-ghost:hover { border-color: var(--walnut); background: rgba(46,58,41,0.04); }
+.btn .arrow { display: inline-block; transition: transform 0.3s; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+.section { padding: clamp(80px, 10vw, 140px) clamp(28px, 6vw, 96px); }
+.container { max-width: 1320px; margin: 0 auto; }
+
+hr.rule { border: 0; height: 1px; background: var(--rule); }
+
+::selection { background: var(--terracotta); color: var(--cream); }
+
+main, nav, footer { position: relative; z-index: 2; }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* ============================================================
+   MOBILE NAV — hamburger + drawer (desktop layout untouched)
+   ============================================================ */
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--walnut);
+  padding: 0;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.nav-hamburger:hover { background: rgba(46,58,41,0.06); border-color: var(--walnut); color: var(--terracotta); }
+.nav-hamburger svg { display: block; }
+
+.nav-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  padding: 22px clamp(20px, 6vw, 40px) 32px;
+  overflow-y: auto;
+  animation: navDrawerIn 0.25s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes navDrawerIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.nav-mobile-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 28px;
+}
+.nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+}
+.nav-mobile-links a {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--walnut);
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-mobile-links a.active { color: var(--terracotta); }
+.nav-mobile-cta {
+  margin-top: 28px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE — non-invasive overrides for inline styles
+   ============================================================ */
+@media (max-width: 900px) {
+  .nav-desktop-links { display: none !important; }
+  .nav-hamburger { display: inline-flex !important; }
+
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  [style*="grid-template-columns: repeat(5"][style*="gap: 10px"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+  [style*="grid-template-columns: repeat(2"][style*="gap: 10px"],
+  [style*="grid-template-columns: 1fr 1fr"][style*="gap: 18px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  [style*="min-height: 680"] { min-height: 380px !important; }
+  [style*="min-height: 460"] { min-height: auto !important; }
+  [style*="min-height: 280"] { min-height: auto !important; }
+
+  [aria-hidden="true"][style*="position: absolute"] {
+    display: none !important;
+  }
+
+  [style*="position: absolute"][style*="left: -"],
+  [style*="position: absolute"][style*="right: -"],
+  [style*="position: absolute"][style*="bottom: -"],
+  [style*="position: absolute"][style*="top: -"] {
+    position: static !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin-top: 18px !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  .btn { padding: 14px 20px; font-size: 13.5px; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+
+  h1.display { font-size: clamp(40px, 11vw, 60px) !important; }
+  h2.display { font-size: clamp(30px, 8.5vw, 48px) !important; }
+
+  .section { padding: 64px 22px !important; }
+}
+
+@media (min-width: 901px) {
+  .nav-mobile-drawer { display: none !important; }
+}
+
+/* ============================================================
+   TABLET — drop 4-col strips to 2-col before fully collapsing
+   ============================================================ */
+@media (max-width: 1100px) and (min-width: 901px) {
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [style*="grid-template-columns: 1.6fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+  [style*="grid-template-columns: 1fr 2fr 1.4fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+/* ============================================================
+   MOBILE — kill vertical dividers when grid items stack
+   ============================================================ */
+@media (max-width: 900px) {
+  [style*="border-right:"] { border-right: 0 !important; }
+  [style*="border-left:"] { border-left: 0 !important; }
+  [style*="border-bottom:"][style*="rgba(239,241,232,0.18)"],
+  [style*="border-bottom:"][style*="rgba(239, 241, 232, 0.18)"] {
+    border-bottom: 0 !important;
+  }
+  [style*="border-top: 1px solid rgba(239,241,232,0.18)"] > div,
+  [style*="border-top: 1px solid rgba(239, 241, 232, 0.18)"] > div {
+    border-top: 1px solid rgba(239, 241, 232, 0.12) !important;
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+
+  [style*="border-top: 1px solid var(--rule-strong)"] > div {
+    border-top: 1px solid var(--rule) !important;
+    padding-top: 28px !important;
+  }
+  [style*="border-top: 1px solid var(--rule-strong)"] > div:first-child {
+    border-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* ============================================================
+   SMALL PHONE — tighter nav, shrink logo block, looser hero
+   ============================================================ */
+@media (max-width: 520px) {
+  nav > div { padding: 14px 18px !important; gap: 14px !important; }
+  nav a img { height: 36px !important; }
+  nav a .display { font-size: 17px !important; }
+  nav a span.smallcaps { font-size: 8px !important; }
+
+  .nav-mobile-drawer img { height: 36px !important; }
+  .nav-mobile-drawer .display { font-size: 17px !important; }
+
+  footer img { height: 44px !important; }
+
+  .section table { min-width: 600px !important; }
+}
+
+/* ============================================================
+   IMAGES — never overflow their container, always object-cover
+   ============================================================ */
+img { max-width: 100%; }
