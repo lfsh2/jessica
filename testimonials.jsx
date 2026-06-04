@@ -25,7 +25,7 @@ function Featured() {
           <span style={{ fontStyle: "italic", fontFamily: "'Source Serif 4', serif", fontWeight: 300, color: "var(--terracotta)" }}>A man finally held.</span>
         </h2>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 64, alignItems: "center" }}>
-          <Placeholder label={FEATURED.name + " · portrait"} style={{ aspectRatio: "4 / 5", width: "100%" }} />
+          <Placeholder src="https://assets.cdn.filesafe.space/oLtwgt8srMUe5rV1iQgS/media/6a20f5865cd41fa7c6ba97ff.jpg" label={FEATURED.name + " · portrait"} style={{ aspectRatio: "4 / 5", width: "100%" }} />
           <div>
             <div aria-hidden style={{ fontFamily: "'Source Serif 4', serif", fontStyle: "italic", fontWeight: 300, fontSize: 140, color: "var(--terracotta)", opacity: 0.25, lineHeight: 0.5, marginBottom: 14 }}>"</div>
             <p style={{ fontSize: "clamp(22px, 2.4vw, 30px)", lineHeight: 1.45, color: "var(--walnut)", fontFamily: "'Source Serif 4', serif", fontWeight: 300, fontStyle: "italic", marginBottom: 32 }}>

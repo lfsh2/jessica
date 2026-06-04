@@ -48,7 +48,7 @@ function Hero() {
           </div>
 
           <div style={{ position: "relative", minHeight: 680 }}>
-            <Placeholder label="Portrait of Jessica" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", borderRadius: 2, overflow: "hidden" }} />
+            <Placeholder src="https://assets.cdn.filesafe.space/oLtwgt8srMUe5rV1iQgS/media/6a20f5865cd41fa7c6ba97ff.jpg" label="Portrait of Jessica" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", borderRadius: 2, overflow: "hidden" }} />
 
             <div style={{ position: "absolute", left: "-48px", bottom: "-36px", background: "var(--cream)", border: "1px solid var(--rule)", padding: "28px 30px 24px", maxWidth: 340, boxShadow: "0 24px 60px -30px rgba(46,58,41,0.35)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14, color: "var(--terracotta)" }}>
@@ -150,7 +150,7 @@ function AboutPreview() {
       <div className="container">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "clamp(40px, 6vw, 100px)", alignItems: "center" }}>
           <div style={{ position: "relative" }}>
-            <Placeholder label="Jessica · candid portrait" style={{ aspectRatio: "3 / 4", width: "100%" }} />
+            <Placeholder src="https://assets.cdn.filesafe.space/oLtwgt8srMUe5rV1iQgS/media/6a20f5865cd41fa7c6ba97ff.jpg" label="Jessica · candid portrait" style={{ aspectRatio: "3 / 4", width: "100%" }} />
             <div style={{ position: "absolute", bottom: -28, right: -28, width: 140, height: 140, background: "var(--terracotta)", color: "var(--cream)", borderRadius: "50%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 18 }}>
               <div className="smallcaps" style={{ fontSize: 9, marginBottom: 4, color: "var(--cream)" }}>Certified · Reborn</div>
               <div className="display" style={{ fontSize: 28, fontWeight: 500, lineHeight: 1 }}>20+ yrs</div>

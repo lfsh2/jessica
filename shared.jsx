@@ -183,16 +183,11 @@ function Nav({ current = "" }) {
 
   const Logo = () => (
     <a href="index.html" style={{ display: "flex", alignItems: "center", gap: 12 }}>
-      <span
-        aria-hidden
-        style={{
-          width: 44, height: 44, borderRadius: "50%",
-          background: "var(--terracotta)", color: "var(--cream)",
-          display: "inline-flex", alignItems: "center", justifyContent: "center",
-        }}
-      >
-        <BloomMark size={22} color="var(--cream)" />
-      </span>
+      <img
+        src="https://assets.cdn.filesafe.space/oLtwgt8srMUe5rV1iQgS/media/6a20f58613f02764226476a2.png"
+        alt="Wild Prairie Coaching logo"
+        style={{ width: 44, height: 44, objectFit: "contain" }}
+      />
       <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
         <span className="display" style={{ fontSize: 19, fontWeight: 600, color: "var(--walnut)" }}>
           Jessica Medler
@@ -456,16 +451,11 @@ function Footer() {
         >
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
-              <span
-                aria-hidden
-                style={{
-                  width: 56, height: 56, borderRadius: "50%",
-                  background: "var(--terracotta)", color: "var(--cream)",
-                  display: "inline-flex", alignItems: "center", justifyContent: "center",
-                }}
-              >
-                <BloomMark size={28} color="var(--cream)" />
-              </span>
+              <img
+                src="https://assets.cdn.filesafe.space/oLtwgt8srMUe5rV1iQgS/media/6a20f58613f02764226476a2.png"
+                alt="Wild Prairie Coaching logo"
+                style={{ width: 56, height: 56, objectFit: "contain", filter: "brightness(0) invert(1)" }}
+              />
               <div className="display" style={{ fontSize: 24, fontWeight: 600 }}>
                 Jessica Medler
               </div>

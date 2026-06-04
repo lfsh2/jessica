@@ -12,7 +12,7 @@ function StoryBlock() {
               I'm a recovering performer.{" "}
               <span style={{ fontStyle: "italic", fontFamily: "'Source Serif 4', serif", fontWeight: 300, color: "var(--terracotta)" }}>Still walking the prairie.</span>
             </h2>
-            <Placeholder label="Jessica · candid portrait" style={{ marginTop: 32, aspectRatio: "4 / 5", width: "100%" }} />
+            <Placeholder src="https://assets.cdn.filesafe.space/oLtwgt8srMUe5rV1iQgS/media/6a20f5865cd41fa7c6ba97ff.jpg" label="Jessica · candid portrait" style={{ marginTop: 32, aspectRatio: "4 / 5", width: "100%" }} />
             <div style={{ marginTop: 32, padding: "24px 28px", background: "var(--cream-2)", borderLeft: "2px solid var(--terracotta)" }}>
               <p className="serif-italic" style={{ fontSize: 18, lineHeight: 1.5, color: "var(--walnut)", fontWeight: 300 }}>
                 "I praise you, for I am fearfully and wonderfully made."
