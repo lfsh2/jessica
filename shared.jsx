@@ -5,8 +5,8 @@
 
 const { useState, useEffect, useMemo, useRef } = React;
 
-/* External booking widget — TODO: replace with Jessica's booking URL */
-const BOOKING_URL = "https://api.leadconnectorhq.com/widget/booking/REPLACE_WITH_JESSICA_BOOKING_ID";
+/* External booking widget */
+const BOOKING_URL = "https://api.leadconnectorhq.com/widget/booking/d6d2wxNruqgKR9GrKKnU";
 
 /* ============================================================
  * PALETTES — Sage Studio is default (Jessica's template choice)
